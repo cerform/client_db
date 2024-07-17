@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Clients</h1>
+<a href="{{ url_for('add_client') }}">Add Client</a>
+<ul>
+    {% for client in clients %}
+        <li>
+            <img src="{{ url_for('static', filename='uploads/clients/' ~ client.photo) }}" alt="{{ client.name }}" width="100">
+            <p>{{ client.name }} - {{ client.email }} - {{ client.phone }}</p>
+            <a href="{{ url_for('edit_client', id=client.id) }}">Edit</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

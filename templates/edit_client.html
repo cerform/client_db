@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Edit Client</h1>
+<form method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.name.label }}<br>
+        {{ form.name(size=32) }}
+    </p>
+    <p>
+        {{ form.email.label }}<br>
+        {{ form.email(size=32) }}
+    </p>
+    <p>
+        {{ form.phone.label }}<br>
+        {{ form.phone(size=32) }}
+    </p>
+    <p>
+        {{ form.photo.label }}<br>
+        {{ form.photo() }}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
